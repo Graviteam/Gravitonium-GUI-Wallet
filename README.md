@@ -1,13 +1,13 @@
-# [HUSH](https://myhush.org/) Desktop GUI Wallet
+# [Gravitonium](https://gravitonium.org/) Desktop GUI Wallet
 
-## Graphical user interface wrapper for the [HUSH (formerly Zdash)](https://myhush.org/) command line tools
+## Graphical user interface wrapper for the [Gravitonium](https://gravitonium.org/) command line tools
 
-This program provides a Graphical User Interface (GUI) for the HUSH (formerly Zdash) client tools that acts as a wrapper and presents the information in a user-friendly manner.
+This program provides a Graphical User Interface (GUI) for the Gravitonium client tools that acts as a wrapper and presents the information in a user-friendly manner.
 
 ![Screenshot](docs/HUSHWallet.png "Main Window")
 
 ### Security warning
-**Encryption of the `wallet.dat` file is not yet supported for HUSH. Using the wallet on a system infected**
+**Encryption of the `wallet.dat` file is not yet supported for Gravitonium. Using the wallet on a system infected**
 **with malware may result in wallet data/funds being stolen. Such cases have been reported! In addition the**
 **only way to have full assurance of the safety of running the node/wallet software is to compile it from**
 **source code and to inspect the code first.**
@@ -15,15 +15,15 @@ This program provides a Graphical User Interface (GUI) for the HUSH (formerly Zd
 
 ## Building, installing and running the Wallet GUI
 
-Before installing the Desktop GUI Wallet you need to have HUSH up and running. The following [guide](https://github.com/MyHush/hush/blob/master/README.md) explains how to set up [HUSH (formerly Zdash)](https://myhush.org/). 
+Before installing the Desktop GUI Wallet you need to have Gravitonium up and running. The following [guide](https://github.com/Graviteam/Gravitonium/blob/master/README.md) explains how to set up [Gravitonium](https://gravitonium.org/). 
 
 **For security reasons it is recommended to always build the GUI wallet program from GitHub**
-**[source](https://github.com/vaklinov/hush-swing-wallet-ui/archive/master.zip).**
+**[source](https://github.com/Graviteam/Gravitonium/archive/master.zip).**
 The details of how to build it are described below (easy to follow). 
 
 1. Operating system and tools
 
-   As of May 2017 (HUSH v1.0.9) this program is mostly tested on Linux. The Linux tools you need 
+   As of May 2017 this program is mostly tested on Linux. The Linux tools you need 
    to build and run the Wallet GUI are Git, Java (JDK7 or later) and Ant. If using Ubuntu Linux, 
    they may be installed via command: 
    ```
@@ -41,52 +41,52 @@ The details of how to build it are described below (easy to follow).
 
 2. Building from source code
 
-   As a start you need to clone the hush-swing-wallet-ui Git repository:
+   As a start you need to clone the Gravitonium-GUI-Wallet Git repository:
    ```
-   user@ubuntu:~/build-dir$ git clone https://github.com/vaklinov/hush-swing-wallet-ui.git
+   user@ubuntu:~/build-dir$ git clone https://github.com/Graviteam/Gravitonium-GUI-Wallet.git
    ```
    Change the current directory:
    ```
-   user@ubuntu:~/build-dir$ cd hush-swing-wallet-ui/
+   user@ubuntu:~/build-dir$ cd Gravitonium-GUI-Wallet/
    ```
    Issue the build command:
    ```
-   user@ubuntu:~/build-dir/hush-swing-wallet-ui$ ant -buildfile ./src/build/build.xml
+   user@ubuntu:~/build-dir/Gravitonium-GUI-Wallet$ ant -buildfile ./src/build/build.xml
    ```
-   This takes a few seconds and when it finishes, it builds a JAR file `./build/jars/HUSHSwingWalletUI.jar`. 
+   This takes a few seconds and when it finishes, it builds a JAR file `./build/jars/GravitoniumSwingWalletUI.jar`. 
    You need to make this file executable:
    ```
-   user@ubuntu:~/build-dir/hush-swing-wallet-ui$ chmod u+x ./build/jars/HUSHSwingWalletUI.jar
+   user@ubuntu:~/build-dir/Gravitonium-GUI-Wallet$ chmod u+x ./build/jars/GravitoniumSwingWalletUI.jar
    ```
    At this point the build process is finished the built GUI wallet program is the JAR 
-   file `./build/jars/HUSHSwingWalletUI.jar`
+   file `./build/jars/GravitoniumSwingWalletUI.jar`
 
-3. Installing the built HUSH GUI wallet
+3. Installing the built Gravitonium GUI Wallet
 
-  3.1. If you have built HUSH from source code:
+  3.1. If you have built Gravitonium from source code:
 
-   Assuming you have already built it from source code in directory `/home/user/hush/src` (for 
-   example - this is the typical build dir. for HUSH v1.0.8) which contains the command line tools `hush-cli` 
-   and `hushd` you need to take the created file `./build/jars/HUSHSwingWalletUI.jar` and copy it 
-   to directory `/home/user/hush/src` (the same dir. that contains `hush-cli` and `hushd`). Example copy command:
+   Assuming you have already built it from source code in directory `/home/user/Gravitonium/src` (for 
+   example - this is the typical build dir. for Gravitonium) which contains the command line tools `gravitonium-cli` 
+   and `gravitoniumd` you need to take the created file `./build/jars/GravitoniumSwingWalletUI.jar` and copy it 
+   to directory `/home/user/Gravitonium/src` (the same dir. that contains `gravitonium-cli` and `gravitoniumd`). Example copy command:
    ```
-   user@ubuntu:~/build-dir/hush-swing-wallet-ui$ cp ./build/jars/HUSHSwingWalletUI.jar /home/user/hush/src    
+   user@ubuntu:~/build-dir/Gravitonium$ cp ./build/jars/GravitoniumSwingWalletUI.jar /home/user/Gravitonium/src    
    ```
 
-4. Running the installed HUSH GUI wallet
+4. Running the installed Gravitonium GUI Wallet
 
-   Before running the GUI you need to start hushd (e.g. `hushd --daemon`). The wallet GUI is a Java program packaged 
+   Before running the GUI you need to start gravitoniumd (e.g. `gravitoniumd --daemon`). The wallet GUI is a Java program packaged 
    as an executable JAR file. It may be run from command line or started from another GUI tool (e.g. file manager). 
-   Assuming you have already installed HUSH and the GUI Wallet `HUSHSwingWalletUI.jar` in 
-   directory `/home/user/hush/src` one way to run it from command line is:
+   Assuming you have already installed Gravitonium and the GUI Wallet `GravitoniumSwingWalletUI.jar` in 
+   directory `/home/user/Gravitonium/src` one way to run it from command line is:
    ```
-   user@ubuntu:~/build-dir/hush-swing-wallet-ui$ java -jar /home/user/hush/src/HUSHSwingWalletUI.jar
+   user@ubuntu:~/build-dir/Gravitonium-GUI-Wallet$ java -jar /home/user/Gravitonium/src/GravitoniumSwingWalletUI.jar
    ```
    If you are using Ubuntu (or similar ;) Linux you may instead just use the file manager and 
-   right-click on the `HUSHSwingWalletUI.jar` file and choose the option "Open with OpenJDK 8 Runtime". 
-   This will start the HUSH GUI wallet.
+   right-click on the `GravitoniumSwingWalletUI.jar` file and choose the option "Open with OpenJDK 8 Runtime". 
+   This will start the Gravitonium GUI Wallet.
    
-   **Important:** the HUSH configuration file `~/.hush/hush.conf` needs to be correctly set up for the GUI
+   **Important:** the Gravitonium configuration file `~/.gravitonium/gravitonium.conf` needs to be correctly set up for the GUI
     wallet to work. Specifically the RPC user and password need to be set in it like:
     ```
     rpcuser=username
@@ -95,7 +95,7 @@ The details of how to build it are described below (easy to follow).
     ``` 
 
 ### License
-This program is distributed under an [MIT License](https://github.com/vaklinov/hush-swing-wallet-ui/raw/master/LICENSE).
+This program is distributed under an [MIT License](https://github.com/Graviteam/Gravitonium-GUI-Wallet/raw/master/LICENSE).
 
 ### Disclaimer
 

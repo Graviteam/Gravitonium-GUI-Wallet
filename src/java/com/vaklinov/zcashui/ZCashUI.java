@@ -100,7 +100,7 @@ public class ZCashUI
     public ZCashUI(StartupProgressDialog progressDialog)
         throws IOException, InterruptedException, WalletCallException
     {
-        super("HUSH Swing Wallet UI 0.68.6 (beta)");
+        super("Gravitonium Swing Wallet UI 0.68.6 (beta)");
         
         if (progressDialog != null)
         {
@@ -315,9 +315,9 @@ public class ZCashUI
 
                 JOptionPane.showMessageDialog(
                     ZCashUI.this.getRootPane().getParent(),
-                    "The HUSH GUI Wallet is currently considered experimental. Use of this software\n" +
+                    "The Gravitonium GUI Wallet is currently considered experimental. Use of this software\n" +
                     "comes at your own risk! Be sure to read the list of known issues and limitations\n" +
-                    "at this page: https://github.com/vaklinov/hush-swing-wallet-ui\n\n" +
+                    "at this page: https://github.com/Graviteam/Gravitonium-GUI-Wallet\n\n" +
                     "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n" +
                     "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n" +
                     "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n" +
@@ -375,10 +375,10 @@ public class ZCashUI
         	if ((os == OS_TYPE.WINDOWS) || (os == OS_TYPE.MAC_OS))
         	{
         		redirectLoggingToFile();
-        		possiblyCreateHUSHConfigFile();
+        		possiblyCreateGravitoniumConfigFile();
         	}
         	
-            System.out.println("Starting HUSH Swing Wallet ...");
+            System.out.println("Starting Gravitonium Swing Wallet ...");
             System.out.println("OS: " + System.getProperty("os.name") + " = " + os);
             System.out.println("Current directory: " + new File(".").getCanonicalPath());
             System.out.println("Class path: " + System.getProperty("java.class.path"));
@@ -434,7 +434,7 @@ public class ZCashUI
                 if ((wce.getMessage().indexOf("{\"code\":-28") != -1) || // Started but not ready
                 	(wce.getMessage().indexOf("error code: -28") != -1))
                 {
-                	System.out.println("hushd is currently starting...");
+                	System.out.println("gravitoniumd is currently starting...");
                 	daemonStartInProgress = true;
                 }
             }
@@ -443,7 +443,7 @@ public class ZCashUI
             if ((zcashdInfo.status != DAEMON_STATUS.RUNNING) || (daemonStartInProgress))
             {
             	System.out.println(
-            		"hushd is not runing at the moment or has not started/synchronized 100% - showing splash...");
+            		"gravitoniumd is not runing at the moment or has not started/synchronized 100% - showing splash...");
 	            startupBar = new StartupProgressDialog(initialClientCaller);
 	            startupBar.setVisible(true);
 	            startupBar.waitForStartup();
@@ -474,7 +474,7 @@ public class ZCashUI
             {
                 JOptionPane.showMessageDialog(
                         null,
-                        "It appears that hushd has been started but is not ready to accept wallet\n" +
+                        "It appears that gravitoniumd has been started but is not ready to accept wallet\n" +
                         "connections. It is still loading the wallet and blockchain. Please try to \n" +
                         "start the GUI wallet later...",
                         "Wallet communication error",
@@ -483,9 +483,9 @@ public class ZCashUI
             {
                 JOptionPane.showMessageDialog(
                     null,
-                    "There was a problem communicating with the HUSH daemon/wallet. \n" +
-                    "Please ensure that the HUSH server hushd is started (e.g. via \n" + 
-                    "command  \"hushd --daemon\"). Error message is: \n" +
+                    "There was a problem communicating with the Gravitonium daemon/wallet. \n" +
+                    "Please ensure that the Gravitonium server gravitoniumd is started (e.g. via \n" + 
+                    "command  \"gravitoniumd --daemon\"). Error message is: \n" +
                      wce.getMessage() +
                     "See the console output for more detailed error information!",
                     "Wallet communication error",
@@ -525,7 +525,7 @@ public class ZCashUI
 		String settingsDir = OSUtil.getSettingsDirectory();
 		Date today = new Date();
 		String logFile = settingsDir + File.separator + 
-				         "HUSHWallet_" +
+				         "GravitoniumWallet_" +
 				         (int)(today.getYear() + 1900) + "_" +
 				         (int)(today.getMonth() + 1) + "_" +
 				         "debug.log";
@@ -541,7 +541,7 @@ public class ZCashUI
     }
     
     
-    public static void possiblyCreateHUSHConfigFile()
+    public static void possiblyCreateGravitoniumConfigFile()
         throws IOException
     {
     	String blockchainDir = OSUtil.getBlockchainDirectory();
@@ -556,27 +556,27 @@ public class ZCashUI
 			}
 		}
 		
-		File hushConfigFile = new File(dir, "hush.conf");
+		File gravitoniumConfigFile = new File(dir, "gravitonium.conf");
 		
-		if (!hushConfigFile.exists())
+		if (!gravitoniumConfigFile.exists())
 		{
-			System.out.println("HUSH configuration file " + hushConfigFile.getCanonicalPath() + 
+			System.out.println("Gravitonium configuration file " + gravitoniumConfigFile.getCanonicalPath() + 
 					           " does not exist. It will be created with default settings.");
 			
 			Random r = new Random(System.currentTimeMillis());
 			
-			PrintStream configOut = new PrintStream(new FileOutputStream(hushConfigFile));
+			PrintStream configOut = new PrintStream(new FileOutputStream(gravitoniumConfigFile));
 			
 			configOut.println("#############################################################################");
-			configOut.println("#                         HUSH configuration file                           #");
+			configOut.println("#                         Gravitonium configuration file                    #");
 			configOut.println("#############################################################################");
-			configOut.println("# This file has been automatically generated by the HUSH GUI wallet with    #");
+			configOut.println("# This file has been auto generated by the Gravitonium GUI wallet with      #");
 			configOut.println("# default settings. It may be further cutsomized by hand only.              #");
 			configOut.println("#############################################################################");
 			configOut.println("# Creation date: " + new Date().toString());
 			configOut.println("#############################################################################");
 			configOut.println("");
-			configOut.println("# The rpcuser/rpcpassword are used for the local call to hushd");
+			configOut.println("# The rpcuser/rpcpassword are used for the local call to gravitoniumd");
 			configOut.println("rpcuser=User" + Math.abs(r.nextInt()));
 			configOut.println("rpcpassword=Pass" + Math.abs(r.nextInt()) + "" + 
 			                                       Math.abs(r.nextInt()) + "" + 

@@ -115,7 +115,7 @@ public class ZCashClientCaller
 		{
 			throw new IOException(
 				"The ZCash installation directory " + installDir + " needs to contain " +
-				"the command line utilities hushd and zcash-cli. zcash-cli is missing!");
+				"the command line utilities gravitoniumd and zcash-cli. zcash-cli is missing!");
 		}
 		
 		zcashd = new File(dir, OSUtil.getZCashd());
@@ -127,8 +127,8 @@ public class ZCashClientCaller
 		if (zcashd == null || (!zcashd.exists()))
 		{
 		    throw new IOException(
-		    	"The HUSH command line utility " + zcashcli.getCanonicalPath() + 
-		    	" was found, but hushd was not found!");
+		    	"The Gravitonium command line utility " + zcashcli.getCanonicalPath() + 
+		    	" was found, but gravitoniumd was not found!");
 		}
 	}
 

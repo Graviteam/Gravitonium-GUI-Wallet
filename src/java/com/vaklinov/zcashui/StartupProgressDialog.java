@@ -62,7 +62,7 @@ public class StartupProgressDialog extends JFrame {
         contentPane.add(imageLabel, BorderLayout.NORTH);
 		JLabel zcashWalletLabel = new JLabel(
 			"<html><span style=\"font-style:italic;font-weight:bold;font-size:24px\">" + 
-		    "HUSH Wallet UI</span></html>");
+		    "Gravitonium Wallet UI</span></html>");
 		zcashWalletLabel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
 		contentPane.add(zcashWalletLabel, BorderLayout.CENTER);
         contentPane.add(southPanel, BorderLayout.SOUTH);
@@ -88,7 +88,7 @@ public class StartupProgressDialog extends JFrame {
                 performWinBundleLaunch();
         }
         
-        System.out.println("Splash: checking if hushd is already running...");
+        System.out.println("Splash: checking if gravitoniumd is already running...");
         boolean shouldStartZCashd = false;
         try {
             clientCaller.getDaemonRawRuntimeInfo();
@@ -103,13 +103,13 @@ public class StartupProgressDialog extends JFrame {
         }
         
         if (!shouldStartZCashd) {
-            System.out.println("Splash: hushd already running...");
+            System.out.println("Splash: gravitoniumd already running...");
             // What if started by hand but taking long to initialize???
 //            doDispose();
 //            return;
         } else
         {
-        	System.out.println("Splash: hushd will be started...");
+        	System.out.println("Splash: gravitoniumd will be started...");
         }
         
         final Process daemonProcess = 
@@ -151,7 +151,7 @@ public class StartupProgressDialog extends JFrame {
         if (daemonProcess != null) // Shutdown only if we started it
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
-                System.out.println("Stopping hushd because we started it - now it is alive: " + 
+                System.out.println("Stopping gravitoniumd because we started it - now it is alive: " + 
                 		           StartupProgressDialog.this.isAlive(daemonProcess));
                 try 
                 {
@@ -161,7 +161,7 @@ public class StartupProgressDialog extends JFrame {
 	                while (!StartupProgressDialog.this.waitFor(daemonProcess, 3000))
 	                {
 	                	long end = System.currentTimeMillis();
-	                	System.out.println("Waiting for " + ((end - start) / 1000) + " seconds for hushd to exit...");
+	                	System.out.println("Waiting for " + ((end - start) / 1000) + " seconds for gravitoniumd to exit...");
 	                	
 	                	if (end - start > 10 * 1000)
 	                	{
@@ -176,14 +176,14 @@ public class StartupProgressDialog extends JFrame {
 	                }
 	            
 	                if (StartupProgressDialog.this.isAlive(daemonProcess)) {
-	                    	System.out.println("hushd is still alive although we tried to stop it. " +
+	                    	System.out.println("gravitoniumd is still alive although we tried to stop it. " +
 	                                           "Hopefully it will stop later!");
-	                        //System.out.println("hushd is still alive, killing forcefully");
+	                        //System.out.println("gravitoniumd is still alive, killing forcefully");
 	                        //daemonProcess.destroyForcibly();
 	                    } else
-	                        System.out.println("hushd shut down successfully");
+	                        System.out.println("gravitoniumd shut down successfully");
                 } catch (Exception bad) {
-                    System.out.println("Couldn't stop hushd!");
+                    System.out.println("Couldn't stop gravitoniumd!");
                     bad.printStackTrace();
                 }
             }
@@ -216,7 +216,7 @@ public class StartupProgressDialog extends JFrame {
         System.out.println("performing Win Bundle-specific launch");
         String programFiles = System.getenv("PROGRAMFILES");
         File pf = new File(programFiles);
-        File bundlePath = new File(pf, "hush4win/app");
+        File bundlePath = new File(pf, "gravitonium4win/app");
         bundlePath = bundlePath.getCanonicalFile();
         
         // run "first-run.bat"

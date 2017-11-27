@@ -122,7 +122,7 @@ public class DashboardPanel
 			this.getClass().getClassLoader().getResource("images/zcash-logo-square3.png")));
 		tempPanel.add(logoLabel);
 		//tempPanel.add(new JLabel(" "));
-		JLabel zcLabel = new JLabel("HUSH Wallet     ");
+		JLabel zcLabel = new JLabel("Gravitonium Wallet     ");
 		zcLabel.setFont(new Font("Helvetica", Font.BOLD | Font.ITALIC, 32));
 		tempPanel.add(zcLabel);
 		//tempPanel.setToolTipText("Powered by ZCash\u00AE");
@@ -380,7 +380,7 @@ public class DashboardPanel
 		}
 		
 		String text =
-			"<html><span style=\"font-weight:bold;color:#303030\">hushd</span> status: " + 
+			"<html><span style=\"font-weight:bold;color:#303030\">gravitoniumd</span> status: " + 
 		    daemonStatus + ",  " + runtimeInfo + " <br/>" +
 			"Wallet: <span style=\"font-weight:bold;color:#303030\">" + walletDAT.getCanonicalPath() + "</span>" + 
 			walletEncryption + " <br/> " +
@@ -515,11 +515,11 @@ public class DashboardPanel
 		String text =
 			"<html>" + 
 		    "<span style=\"font-family:monospace;font-size:8.9px;" + color1 + "\">Transparent balance: <span style=\"font-size:9px\">" + 
-				transparentUCBalance + " HUSH </span></span><br/> " +
+				transparentUCBalance + " Gravitonium </span></span><br/> " +
 			"<span style=\"font-family:monospace;font-size:8.9px;" + color2 + "\">Private (Z) balance: <span style=\"font-weight:bold;font-size:9px\">" + 
-		    	privateUCBalance + " HUSH </span></span><br/> " +
+		    	privateUCBalance + " Gravitonium </span></span><br/> " +
 			"<span style=\"font-family:monospace;font-size:8.9px;" + color3 + "\">Total (Z+T) balance: <span style=\"font-weight:bold;font-size:11.5px;\">" + 
-		    	totalUCBalance + " HUSH </span></span>" +
+		    	totalUCBalance + " Gravitonium </span></span>" +
 			"<br/>  </html>";
 		
 		this.walletBalanceLabel.setText(text);
@@ -533,9 +533,9 @@ public class DashboardPanel
 					  "Unconfirmed (unspendable) balance is being shown due to an<br/>" + 
 		              "ongoing transaction! Actual confirmed (spendable) balance is:<br/>" +
 		              "<span style=\"font-size:5px\"><br/></span>" +
-					  "Transparent: " + transparentBalance + " HUSH<br/>" +
-		              "Private ( Z ): <span style=\"font-weight:bold\">" + privateBalance + " HUSH</span><br/>" +
-					  "Total ( Z+T ): <span style=\"font-weight:bold\">" + totalBalance + " HUSH</span>" +
+					  "Transparent: " + transparentBalance + " Gravitonium<br/>" +
+		              "Private ( Z ): <span style=\"font-weight:bold\">" + privateBalance + " Gravitonium</span><br/>" +
+					  "Total ( Z+T ): <span style=\"font-weight:bold\">" + totalBalance + " Gravitonium</span>" +
 					  "</html>";
 		}
 		

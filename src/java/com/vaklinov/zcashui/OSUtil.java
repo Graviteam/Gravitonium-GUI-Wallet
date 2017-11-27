@@ -102,7 +102,7 @@ public class OSUtil
 	// Returns the name of the zcashd server - may vary depending on the OS.
 	public static String getZCashd()
 	{
-		String zcashd = "hushd";
+		String zcashd = "gravitoniumd";
 		
 		OS_TYPE os = getOSType();
 		if (os == OS_TYPE.WINDOWS)
@@ -117,7 +117,7 @@ public class OSUtil
 	// Returns the name of the zcash-cli tool - may vary depending on the OS.
 	public static String getZCashCli()
 	{
-		String zcashcli = "hush-cli";
+		String zcashcli = "gravitonium-cli";
 		
 		OS_TYPE os = getOSType();
 		if (os == OS_TYPE.WINDOWS)
@@ -135,7 +135,7 @@ public class OSUtil
 	{
 		// TODO: this way of finding the dir is JAR name dependent - tricky, may not work
 		// if program is repackaged as different JAR!
-		final String JAR_NAME = "HUSHSwingWalletUI.jar";
+		final String JAR_NAME = "GravitoniumSwingWalletUI.jar";
 		String cp = System.getProperty("java.class.path");
 		if ((cp != null) && (cp.indexOf(File.pathSeparator) == -1) &&
 			(cp.endsWith(JAR_NAME)))
@@ -180,13 +180,13 @@ public class OSUtil
 		
 		if (os == OS_TYPE.MAC_OS)
 		{
-			return new File(System.getProperty("user.home") + "/Library/Application Support/Hush").getCanonicalPath();
+			return new File(System.getProperty("user.home") + "/Library/Application Support/Gravitonium").getCanonicalPath();
 		} else if (os == OS_TYPE.WINDOWS)
 		{
-			return new File(System.getenv("APPDATA") + "\\Hush").getCanonicalPath();
+			return new File(System.getenv("APPDATA") + "\\Gravitonium").getCanonicalPath();
 		} else
 		{
-			return new File(System.getProperty("user.home") + "/.hush").getCanonicalPath();
+			return new File(System.getProperty("user.home") + "/.gravitonium").getCanonicalPath();
 		}
 	}
 
@@ -201,13 +201,13 @@ public class OSUtil
 	    
 	    if (os == OS_TYPE.MAC_OS)
 	    {
-	        dir = new File(userHome, "Library/Application Support/HUSHSwingWalletUI");
+	        dir = new File(userHome, "Library/Application Support/GravitoniumSwingWalletUI");
 	    } else if (os == OS_TYPE.WINDOWS)
 		{
-			dir = new File(System.getenv("LOCALAPPDATA") + "\\HUSHSwingWalletUI");
+			dir = new File(System.getenv("LOCALAPPDATA") + "\\GravitoniumSwingWalletUI");
 		} else
 	    {
-	        dir = new File(userHome.getCanonicalPath() + File.separator + ".HUSHSwingWalletUI");
+	        dir = new File(userHome.getCanonicalPath() + File.separator + ".GravitoniumSwingWalletUI");
 	    }
 	    
 		if (!dir.exists())
@@ -252,7 +252,7 @@ public class OSUtil
 	    File f;
 	    
 	    // Try with system property zcash.location.dir - may be specified by caller
-	    String ZCashLocationDir = System.getProperty("hush.location.dir");
+	    String ZCashLocationDir = System.getProperty("gravitonium.location.dir");
 	    if ((ZCashLocationDir != null) && (ZCashLocationDir.trim().length() > 0))
 	    {
 	        f = new File(ZCashLocationDir + File.separator + command);
@@ -269,15 +269,15 @@ public class OSUtil
 	    	// The following search directories apply to UNIX-like systems only
 			final String dirs[] = new String[]
 			{
-			    // TODO: HUSH directories!
+			    // TODO: Gravitonium directories!
 				"/usr/bin/", // Typical Ubuntu
 				"/bin/",
 				"/usr/local/bin/",
-				"/usr/local/hush/bin/",
-				"/usr/lib/hush/bin/",
+				"/usr/local/Gravitonium/bin/",
+				"/usr/lib/Gravitonium/bin/",
 				"/opt/local/bin/",
-				"/opt/local/hush/bin/",
-				"/opt/hush/bin/"
+				"/opt/local/Gravitonium/bin/",
+				"/opt/Gravitonium/bin/"
 			};
 	
 			for (String d : dirs)
@@ -298,7 +298,7 @@ public class OSUtil
 	    		File pf = new File(programFiles);
 	    		if (pf.exists() && pf.isDirectory())
 	    		{
-	    			File ZDir = new File(pf, "Hush");
+	    			File ZDir = new File(pf, "Gravitonium");
 	    			if (ZDir.exists() && ZDir.isDirectory())
 	    			{
 	    				File cf = new File(ZDir, command);

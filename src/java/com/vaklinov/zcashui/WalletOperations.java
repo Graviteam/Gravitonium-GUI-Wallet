@@ -129,7 +129,7 @@ public class WalletOperations
 				JOptionPane.showMessageDialog(
 					this.parent, 
 					"An unexpected error occurred while encrypting the wallet!\n" +
-					"It is recommended to stop and restart both hushd and the GUI wallet! \n" +
+					"It is recommended to stop and restart both gravitoniumd and the GUI wallet! \n" +
 					"\n" + wce.getMessage().replace(",", ",\n"),
 					"Error in encrypting wallet...", JOptionPane.ERROR_MESSAGE);
 				return;
@@ -137,7 +137,7 @@ public class WalletOperations
 			
 			JOptionPane.showMessageDialog(
 				this.parent, 
-				"The wallet has been encrypted sucessfully and hushd has stopped.\n" +
+				"The wallet has been encrypted sucessfully and gravitoniumd has stopped.\n" +
 				"The GUI wallet will be stopped as well. Please restart both. In\n" +
 				"addtion the internal wallet keypool has been flushed. You need\n" +
 				"to make a new backup..." +
@@ -197,7 +197,7 @@ public class WalletOperations
 			JOptionPane.showMessageDialog(
 				this.parent, 
 				"The wallet has been backed up successfully to file: " + f.getName() + "\n" +
-				"in the backup directory provided to hushd (-exportdir=<dir>).",
+				"in the backup directory provided to gravitoniumd (-exportdir=<dir>).",
 				"Wallet is backed up...", JOptionPane.INFORMATION_MESSAGE);
 			
 		} catch (Exception e)
@@ -254,9 +254,9 @@ public class WalletOperations
 				this.parent, 
 				"The wallet private keys have been exported successfully to file:\n" + 
 				f.getName() + "\n" +
-				"in the backup directory provided to hushd (-exportdir=<dir>).\n" +
+				"in the backup directory provided to gravitoniumd (-exportdir=<dir>).\n" +
 				"You need to protect this file from unauthorized access. Anyone who\n" +
-				"has access to the private keys can spend the HUSH balance!",
+				"has access to the private keys can spend the Gravitonium balance!",
 				"Wallet private key export...", JOptionPane.INFORMATION_MESSAGE);
 			
 		} catch (Exception e)
@@ -435,14 +435,14 @@ public class WalletOperations
         JOptionPane.showMessageDialog(
             this.parent,
             "For security reasons the wallet may be backed up/private keys exported only if\n" +
-            "the hushd parameter -exportdir=<dir> has been set. If you started hushd \n" +
-            "manually, you ought to have provided this parameter. When hushd is started \n" +
+            "the gravitoniumd parameter -exportdir=<dir> has been set. If you started gravitoniumd \n" +
+            "manually, you ought to have provided this parameter. When gravitoniumd is started \n" +
             "automatically by the GUI wallet the directory provided as parameter to -exportdir\n" +
             "is the user home directory: " + OSUtil.getUserHomeDirectory().getCanonicalPath() +"\n" +
             "Please navigate to the directory provided as -exportdir=<dir> and select a\n"+ 
             "filename in it to backup/export private keys. If you select another directory\n" +
             "instead, the destination file will still end up in the directory provided as \n" +
-            "-exportdir=<dir>. If this parameter was not provided to hushd, the process\n" +
+            "-exportdir=<dir>. If this parameter was not provided to gravitoniumd, the process\n" +
             "will fail with a security check error. The filename needs to consist of only\n" + 
             "alphanumeric characters (e.g. dot is not allowed).\n\n" +
             "(This message will be shown only once)",

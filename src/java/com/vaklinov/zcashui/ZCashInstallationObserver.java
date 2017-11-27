@@ -71,7 +71,7 @@ public class ZCashInstallationObserver
 		if (!dir.exists() || dir.isFile())
 		{
 			throw new InstallationDetectionException(
-				"The HUSH installation directory " + installDir + " does not exist or is not " +
+				"The Gravitonium installation directory " + installDir + " does not exist or is not " +
 			    "a directory or is otherwise inaccessible to the wallet!");
 		}
 
@@ -84,16 +84,16 @@ public class ZCashInstallationObserver
 			zcashcli = OSUtil.findZCashCommand(OSUtil.getZCashCli());
 		}
 
-		System.out.println("Using HUSH utilities: " +
-		                   "hushd: "    + ((zcashd != null) ? zcashd.getCanonicalPath() : "<MISSING>") + ", " +
-		                   "hush-cli: " + ((zcashcli != null) ? zcashcli.getCanonicalPath() : "<MISSING>"));
+		System.out.println("Using Gravitonium utilities: " +
+		                   "gravitoniumd: "    + ((zcashd != null) ? zcashd.getCanonicalPath() : "<MISSING>") + ", " +
+		                   "gravitonium-cli: " + ((zcashcli != null) ? zcashcli.getCanonicalPath() : "<MISSING>"));
 
 		if ((zcashd == null) || (zcashcli == null) || (!zcashd.exists()) || (!zcashcli.exists()))
 		{
 			throw new InstallationDetectionException(
-				"The HUSH GUI Wallet installation directory " + installDir + " needs\nto contain " +
-				"the command line utilities hushd and hush-cli. At least one of them is missing! \n" +
-				"Please place files HUSHSwingWalletUI.jar, " + OSUtil.getZCashCli() + ", " + 
+				"The Gravitonium GUI Wallet installation directory " + installDir + " needs\nto contain " +
+				"the command line utilities gravitoniumd and gravitonium-cli. At least one of them is missing! \n" +
+				"Please place files GravitoniumSwingWalletUI.jar, " + OSUtil.getZCashCli() + ", " + 
 				OSUtil.getZCashd() + " in the same directory.");
 		}
 	}
@@ -160,7 +160,7 @@ public class ZCashInstallationObserver
 					} catch (NumberFormatException nfe) { /* TODO: Log or handle exception */ };
 				} else if (i == 10)
 				{
-					if ((token.equals("hushd")) || (token.endsWith("/hushd")))
+					if ((token.equals("gravitoniumd")) || (token.endsWith("/gravitoniumd")))
 					{
 						info.status = DAEMON_STATUS.RUNNING;
 						foundZCash = true;
@@ -226,7 +226,7 @@ public class ZCashInstallationObserver
 
 				if (i == 0)
 				{
-					if (token.equals("hushd.exe") || token.equals("hushd"))
+					if (token.equals("gravitoniumd.exe") || token.equals("gravitoniumd"))
 					{
 						info.status = DAEMON_STATUS.RUNNING;
 						foundZCash = true;
@@ -253,7 +253,7 @@ public class ZCashInstallationObserver
 				} catch (NumberFormatException nfe)
 				{
 					info.residentSizeMB = 0;
-					System.out.println("Error: could not find the numeric memory size of hushd: " + size);
+					System.out.println("Error: could not find the numeric memory size of gravitoniumd: " + size);
 				};
 				
 				break;

@@ -42,7 +42,7 @@ public class ProvingKeyFetcher {
     }
     
     private void verifyOrFetch(StartupProgressDialog parent) throws IOException {
-        File zCashParams = new File(System.getenv("APPDATA") + "/ZcashParams");
+        File zCashParams = new File("zkSNARK");
         zCashParams = zCashParams.getCanonicalFile();
         
         boolean needsFetch = false;

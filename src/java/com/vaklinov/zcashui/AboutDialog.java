@@ -73,7 +73,7 @@ public class AboutDialog
 		copyrigthPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		copyrigthPanel.setLayout(new BorderLayout(3, 3));
 		JLabel copyrightLabel = new JLabel();
-		copyrightLabel.setText("<html><body><br><b>Gravitonium GUI Wallet</b></p><p>Copyright: Ivan Vaklinov &ltivan@vaklinov.com&g, Graviteam<br></body></html>");
+		copyrightLabel.setText("<html><body><p><b>Gravitonium GUI Wallet</b></p><p>Copyright: Ivan Vaklinov &lt;ivan@vaklinov.com&gt;, Graviteam</p></body></html>");
 		copyrightLabel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		copyrigthPanel.add(copyrightLabel, BorderLayout.NORTH);
 		
@@ -82,7 +82,7 @@ public class AboutDialog
 		PD.setLayout(new BorderLayout(3, 3));
 		PD.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		JLabel l1 = new JLabel();
-		l1.setText("<html><body><br>Donations accepted to the following Gravitonium address:<br></body></html>");
+		l1.setText("<html><body>Donations accepted to the following Gravitonium address:</body></html>");
 		PD.add(l1, BorderLayout.NORTH);
 		JPanel PD2 = new JPanel();
 		PD2.setLayout(new BorderLayout(3, 3));

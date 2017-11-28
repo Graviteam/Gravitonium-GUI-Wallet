@@ -126,7 +126,7 @@ public class AboutDialog
 		JLabel licenseLabel = new JLabel();
 		licenseLabel.setText(
 			"<html><body><pre>" +
-		    " Copyright (c) 2017 Ivan Vaklinov &lt;ivan@vaklinov.com&gt; \n" +
+		    " Copyright (c) 2017 Ivan Vaklinov &lt;ivan@vaklinov.com&gt;, Graviteam \n" +
 			"\n" +
 			" Permission is hereby granted, free of charge, to any person obtaining a copy\n" +
 			" of this software and associated documentation files (the \"Software\"), to deal\n" +

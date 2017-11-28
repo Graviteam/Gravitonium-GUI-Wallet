@@ -171,7 +171,7 @@ public class SendCashPanel
 		tempPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		tempPanel.add(destinationAmountField = new JTextField(13));
 		destinationAmountField.setHorizontalAlignment(SwingConstants.RIGHT);
-		tempPanel.add(new JLabel(" Gravitonium    "));
+		tempPanel.add(new JLabel(" GRV    "));
 		amountPanel.add(tempPanel, BorderLayout.SOUTH);
 
 		JPanel feePanel = new JPanel(new BorderLayout());
@@ -180,7 +180,7 @@ public class SendCashPanel
 		tempPanel.add(transactionFeeField = new JTextField(13));
 		transactionFeeField.setText("0.0001"); // Default value
 		transactionFeeField.setHorizontalAlignment(SwingConstants.RIGHT);		
-		tempPanel.add(new JLabel(" Gravitonium"));
+		tempPanel.add(new JLabel(" GRV"));
 		feePanel.add(tempPanel, BorderLayout.SOUTH);
 
 		amountAndFeePanel.add(amountPanel);

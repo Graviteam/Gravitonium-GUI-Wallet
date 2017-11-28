@@ -515,11 +515,11 @@ public class DashboardPanel
 		String text =
 			"<html>" + 
 		    "<span style=\"font-family:monospace;font-size:8.9px;" + color1 + "\">Transparent balance: <span style=\"font-size:9px\">" + 
-				transparentUCBalance + " Gravitonium </span></span><br/> " +
+				transparentUCBalance + " GRV </span></span><br/> " +
 			"<span style=\"font-family:monospace;font-size:8.9px;" + color2 + "\">Private (Z) balance: <span style=\"font-weight:bold;font-size:9px\">" + 
-		    	privateUCBalance + " Gravitonium </span></span><br/> " +
+		    	privateUCBalance + " GRV </span></span><br/> " +
 			"<span style=\"font-family:monospace;font-size:8.9px;" + color3 + "\">Total (Z+T) balance: <span style=\"font-weight:bold;font-size:11.5px;\">" + 
-		    	totalUCBalance + " Gravitonium </span></span>" +
+		    	totalUCBalance + " GRV </span></span>" +
 			"<br/>  </html>";
 		
 		this.walletBalanceLabel.setText(text);
@@ -533,9 +533,9 @@ public class DashboardPanel
 					  "Unconfirmed (unspendable) balance is being shown due to an<br/>" + 
 		              "ongoing transaction! Actual confirmed (spendable) balance is:<br/>" +
 		              "<span style=\"font-size:5px\"><br/></span>" +
-					  "Transparent: " + transparentBalance + " Gravitonium<br/>" +
-		              "Private ( Z ): <span style=\"font-weight:bold\">" + privateBalance + " Gravitonium</span><br/>" +
-					  "Total ( Z+T ): <span style=\"font-weight:bold\">" + totalBalance + " Gravitonium</span>" +
+					  "Transparent: " + transparentBalance + " GRV<br/>" +
+		              "Private ( Z ): <span style=\"font-weight:bold\">" + privateBalance + " GRV</span><br/>" +
+					  "Total ( Z+T ): <span style=\"font-weight:bold\">" + totalBalance + " GRV</span>" +
 					  "</html>";
 		}
 		

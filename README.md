@@ -4,7 +4,7 @@
 
 This program provides a Graphical User Interface (GUI) for the Gravitonium client tools that acts as a wrapper and presents the information in a user-friendly manner.
 
-![Screenshot](docs/HUSHWallet.png "Main Window")
+![Screenshot](docs/GravitoniumWallet.png "Main Window")
 
 ### Security warning
 **Encryption of the `wallet.dat` file is not yet supported for Gravitonium. Using the wallet on a system infected**

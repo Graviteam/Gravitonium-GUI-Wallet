@@ -89,7 +89,7 @@ public class AboutDialog
 		final JTextArea tar = new JTextArea();
 		tar.setEditable(false);
 		tar.setLineWrap(true);
-		tar.setText("t1RgAgKbMEMWWwp2e1wdsHYD97GMwvezAfR");
+		tar.setText("t1bEaRkZmhA3Cadhy8tZyEf82KcLH91Rw6i");
 		PD2.add(tar, BorderLayout.CENTER);
 		JPanel PD3 = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		final JButton jb1 = new JButton(new String(new byte[] {
